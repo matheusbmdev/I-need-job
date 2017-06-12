@@ -19,6 +19,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
      */
     
     public TelaPrincipal() {
+        
+        
         setExtendedState(JFrame.MAXIMIZED_BOTH); 
 
         initComponents();
@@ -176,6 +178,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         TelaLog.setVisible(true);
         MenuCadLogin.setVisible(false);
         MenuCadButton.setVisible(false);
+       
         
     }//GEN-LAST:event_MenuCadLoginActionPerformed
 

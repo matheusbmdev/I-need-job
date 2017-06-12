@@ -52,7 +52,6 @@ public class Cadastrar extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setTitle("Cadastro");
-        setAutoscrolls(true);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel1.setText("CADASTRO");
@@ -155,7 +154,7 @@ public class Cadastrar extends javax.swing.JInternalFrame {
                 .addComponent(CadSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(CadastrarCad)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -172,7 +171,7 @@ public class Cadastrar extends javax.swing.JInternalFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        setBounds(0, 0, 508, 427);
+        setBounds(0, 0, 505, 510);
     }// </editor-fold>//GEN-END:initComponents
 
     private void CadDataNascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadDataNascActionPerformed
