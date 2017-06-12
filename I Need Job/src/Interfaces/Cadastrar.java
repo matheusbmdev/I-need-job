@@ -5,6 +5,8 @@
  */
 package Interfaces;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author Matheus
@@ -14,9 +16,14 @@ public class Cadastrar extends javax.swing.JInternalFrame {
     /**
      * Creates new form Cadastrar
      */
+       
     public Cadastrar() {
+        
+        
+        
         initComponents();
-    }
+        
+         }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -45,6 +52,7 @@ public class Cadastrar extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setTitle("Cadastro");
+        setAutoscrolls(true);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel1.setText("CADASTRO");
@@ -164,7 +172,7 @@ public class Cadastrar extends javax.swing.JInternalFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        pack();
+        setBounds(0, 0, 508, 427);
     }// </editor-fold>//GEN-END:initComponents
 
     private void CadDataNascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadDataNascActionPerformed
