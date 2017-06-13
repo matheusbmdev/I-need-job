@@ -37,6 +37,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenu2 = new javax.swing.JMenu();
         jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         MenuCadLogin = new javax.swing.JButton();
@@ -56,6 +57,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
@@ -84,20 +96,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGap(229, 229, 229)
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(MenuCadButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(MenuCadLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(229, Short.MAX_VALUE))
+                .addContainerGap(586, Short.MAX_VALUE)
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(MenuCadLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(MenuCadButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(586, Short.MAX_VALUE))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGap(110, 110, 110)
-                .addComponent(MenuCadLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(302, Short.MAX_VALUE)
+                .addComponent(MenuCadLogin)
                 .addGap(57, 57, 57)
-                .addComponent(MenuCadButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap(133, Short.MAX_VALUE))
+                .addComponent(MenuCadButton)
+                .addContainerGap(332, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -163,24 +175,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
         
         TelaLog.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
-
+    public void setTrue(){
+        MenuCadLogin.setVisible(true);
+        MenuCadButton.setVisible(true);
+        System.out.println("aqui/2");
+    }
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         Cadastrar TelaCad = new Cadastrar();
         jDesktopPane1.add(TelaCad);
 
         TelaCad.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
-
-    private void MenuCadLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuCadLoginActionPerformed
-        Login TelaLog = new Login();
-        jDesktopPane1.add(TelaLog);
-        
-        TelaLog.setVisible(true);
-        MenuCadLogin.setVisible(false);
-        MenuCadButton.setVisible(false);
-       
-        
-    }//GEN-LAST:event_MenuCadLoginActionPerformed
 
     private void MenuCadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuCadButtonActionPerformed
         Cadastrar TelaCad = new Cadastrar();
@@ -189,8 +194,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
         TelaCad.setVisible(true);
         MenuCadLogin.setVisible(false);
         MenuCadButton.setVisible(false);
-      
     }//GEN-LAST:event_MenuCadButtonActionPerformed
+
+    private void MenuCadLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuCadLoginActionPerformed
+        Login TelaLog = new Login();
+        jDesktopPane1.add(TelaLog);
+        
+        TelaLog.setVisible(true);
+        TelaLog.setLocation(jDesktopPane1.getSize().width/2 - TelaLog.getSize().width/2,jDesktopPane1.getSize().height/2 - TelaLog.getSize().height/2);
+        MenuCadLogin.setVisible(false);
+        MenuCadButton.setVisible(false);
+    }//GEN-LAST:event_MenuCadLoginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -238,5 +252,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 }

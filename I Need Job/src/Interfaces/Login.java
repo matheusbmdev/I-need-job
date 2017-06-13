@@ -6,7 +6,7 @@
 package Interfaces;
 
 import javax.swing.JFrame;
-
+import Interfaces.TelaPrincipal;
 /**
  *
  * @author Matheus
@@ -16,6 +16,7 @@ public class Login extends javax.swing.JInternalFrame {
     /**
      * Creates new form Login
      */
+    
     public Login() {
         
         initComponents();
@@ -73,6 +74,11 @@ public class Login extends javax.swing.JInternalFrame {
                 formAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                formMouseClicked(evt);
             }
         });
 
@@ -143,8 +149,16 @@ public class Login extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_TextLoginActionPerformed
 
     private void formAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_formAncestorAdded
-                 
+            
     }//GEN-LAST:event_formAncestorAdded
+
+    private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
+        Interfaces.TelaPrincipal.getFrames();
+        
+        
+        System.out.println("AQUI");
+     
+    }//GEN-LAST:event_formMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
