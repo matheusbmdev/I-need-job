@@ -96,6 +96,11 @@ public class Login extends javax.swing.JInternalFrame {
 
         ButtonEntrarLog.setBackground(new java.awt.Color(255, 255, 255));
         ButtonEntrarLog.setText("Entrar");
+        ButtonEntrarLog.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonEntrarLogActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -110,7 +115,7 @@ public class Login extends javax.swing.JInternalFrame {
                     .addComponent(LoginPassword))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(206, Short.MAX_VALUE)
+                .addContainerGap(196, Short.MAX_VALUE)
                 .addComponent(ButtonEntrarLog)
                 .addContainerGap())
         );
@@ -125,7 +130,7 @@ public class Login extends javax.swing.JInternalFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LoginPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
                 .addComponent(ButtonEntrarLog)
                 .addGap(20, 20, 20))
         );
@@ -149,16 +154,20 @@ public class Login extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_TextLoginActionPerformed
 
     private void formAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_formAncestorAdded
-            
+         Interfaces.TelaPrincipal.getFrames();
+        
     }//GEN-LAST:event_formAncestorAdded
 
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
-        Interfaces.TelaPrincipal.getFrames();
-        
-        
-        System.out.println("AQUI");
+       
      
     }//GEN-LAST:event_formMouseClicked
+
+    private void ButtonEntrarLogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEntrarLogActionPerformed
+       
+      
+        
+    }//GEN-LAST:event_ButtonEntrarLogActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

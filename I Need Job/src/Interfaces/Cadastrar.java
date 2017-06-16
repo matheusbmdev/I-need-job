@@ -5,7 +5,9 @@
  */
 package Interfaces;
 
+import java.io.FileWriter;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -16,11 +18,16 @@ public class Cadastrar extends javax.swing.JInternalFrame {
     /**
      * Creates new form Cadastrar
      */
+      Usuario[] usu = new Usuario[1];
+     TelaPrincipal tp = new TelaPrincipal();
+       
        
     public Cadastrar() {
         
-        
-        
+        String Nome;
+       
+       
+
         initComponents();
         
          }
@@ -74,9 +81,21 @@ public class Cadastrar extends javax.swing.JInternalFrame {
 
         jLabel7.setText("Senha");
 
+        CadSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CadSenhaActionPerformed(evt);
+            }
+        });
+
         CadDataNasc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CadDataNascActionPerformed(evt);
+            }
+        });
+
+        CadTel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CadTelActionPerformed(evt);
             }
         });
 
@@ -105,7 +124,7 @@ public class Cadastrar extends javax.swing.JInternalFrame {
                             .addComponent(jLabel5)
                             .addComponent(jLabel6)
                             .addComponent(jLabel7))
-                        .addGap(0, 98, Short.MAX_VALUE))
+                        .addGap(0, 99, Short.MAX_VALUE))
                     .addComponent(CadEmail)
                     .addComponent(CadNome))
                 .addGap(137, 137, 137))
@@ -121,7 +140,7 @@ public class Cadastrar extends javax.swing.JInternalFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(136, 136, 136)
                         .addComponent(jLabel1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(150, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -162,9 +181,9 @@ public class Cadastrar extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(59, 59, 59)
+                .addContainerGap(74, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,12 +198,30 @@ public class Cadastrar extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_CadDataNascActionPerformed
 
     private void CadastrarCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarCadActionPerformed
-        // TODO add your handling code here:
+                    // TODO add your handling code here: 
+        usu[0].setNome(CadNome.getText());
+        try{
+        usu[0].addDados(CadNome.getText(), CadCPF.getText(), CadEmail.getText(), CadTel.getText(), CadDataNasc.getText(), CadSenha.getText());
+        }catch(Exception e){}
+      
+      
     }//GEN-LAST:event_CadastrarCadActionPerformed
 
     private void CadNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadNomeActionPerformed
-        // TODO add your handling code here:
+       
+        
+        
+        
+        
     }//GEN-LAST:event_CadNomeActionPerformed
+
+    private void CadTelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadTelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CadTelActionPerformed
+
+    private void CadSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadSenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CadSenhaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
