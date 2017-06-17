@@ -6,6 +6,9 @@
 package Interfaces;
 
 import java.io.FileWriter;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -18,15 +21,12 @@ public class Cadastrar extends javax.swing.JInternalFrame {
     /**
      * Creates new form Cadastrar
      */
-      Usuario[] usu = new Usuario[1];
-     TelaPrincipal tp = new TelaPrincipal();
-       
-       
+      
+      
+        
     public Cadastrar() {
         
-        String Nome;
-       
-       
+
 
         initComponents();
         
@@ -199,19 +199,12 @@ public class Cadastrar extends javax.swing.JInternalFrame {
 
     private void CadastrarCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarCadActionPerformed
                     // TODO add your handling code here: 
-        usu[0].setNome(CadNome.getText());
-        try{
-        usu[0].addDados(CadNome.getText(), CadCPF.getText(), CadEmail.getText(), CadTel.getText(), CadDataNasc.getText(), CadSenha.getText());
-        }catch(Exception e){}
-      
+ 
       
     }//GEN-LAST:event_CadastrarCadActionPerformed
 
     private void CadNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadNomeActionPerformed
        
-        
-        
-        
         
     }//GEN-LAST:event_CadNomeActionPerformed
 

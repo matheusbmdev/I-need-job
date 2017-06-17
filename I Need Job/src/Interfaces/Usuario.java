@@ -5,6 +5,7 @@
  */
 package Interfaces;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -22,8 +23,11 @@ public abstract class Usuario {
      String DataNasc;
      String Senha;
      
-    
+     Empregado emp = new Empregado ();
      
+     public Usuario(){
+         
+     }
      
      public Usuario(String NomeCompleto, String CPF, String Email, String Telefone,String DataNasc,String Senha){
          this.NomeCompleto = NomeCompleto;
@@ -71,14 +75,17 @@ public abstract class Usuario {
      String getSenha(){
          return this.Senha;
      }
+     
     
-     public void addDados(String NomeCompleto, String CPF, String Email, String Telefone,String DataNasc,String Senha) throws IOException{
-       
-        
+    
+     /*public void addDados(String NomeCompleto, String CPF, String Email, String Telefone,String DataNasc,String Senha) throws IOException{
+       File dados = new File("C:\\Users\\Matheus\\Documents\\NetBeansProjects", "Dados.txt");
+         
+       BufferedWriter writer = new BufferedWriter(new FileWriter(dados));
        try{
         FileWriter fw = new FileWriter(dados);
         
-        
+        System.out.println(" "+this.NomeCompleto);
         fw.write(this.NomeCompleto);
       
         fw.write(this.CPF);
@@ -94,5 +101,5 @@ public abstract class Usuario {
         fw.flush();
         fw.close();
        }catch(Exception e){}
-     }
+     }*/
 }

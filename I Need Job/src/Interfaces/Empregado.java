@@ -6,6 +6,10 @@
 package Interfaces;
 
 import Interfaces.Usuario;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 /**
  *
@@ -15,12 +19,21 @@ public class Empregado extends Usuario{
     float NotaTrabalho;
     String AreaTrabalho;
     
+    
+    public Empregado(){ 
+        
+    }
+    
+    public Empregado(String NomeCompleto, String CPF, String Email, String Telefone,String DataNasc,String Senha){
+        super(NomeCompleto,CPF,Email,Telefone,DataNasc, Senha);
+       
+    }
     public Empregado(String NomeCompleto, String CPF, String Email, String Telefone,String DataNasc,String Senha,float NotaTrabalho,String AreaTrabalho){
         super(NomeCompleto,CPF,Email,Telefone,DataNasc, Senha);
         this.NotaTrabalho = NotaTrabalho;
         this.AreaTrabalho = AreaTrabalho;
     }
-    
+       
     void setNotaTrabalho(float NotaTrabalho){
         this.NotaTrabalho = NotaTrabalho;
     }
@@ -37,4 +50,11 @@ public class Empregado extends Usuario{
            System.out.println("Aqui!");
        }
        
+  public void addDados(String NomeCompleto) throws IOException{
+      
+      Cadastro cad = new Cadastro();
+      
+    
+      
+     }
 }

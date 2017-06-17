@@ -21,13 +21,12 @@ public class INeedJob {
     public static void main(String[] args) throws IOException {
        
         //==============DEFININDO ONDE FICARÁ O ARQUIVO!==================//
-        File dados = new File("C:\\Users\\Matheus\\Documents\\NetBeansProjects", "Dados.txt");
-        dados.createNewFile();
-        dados.mkdir();
+        File Dados = new File("C:\\Users\\Matheus\\Documents\\NetBeansProjects", "Dados.txt");
+        Dados.createNewFile();
+       
         
-        Usuario[] usu = new Usuario[1];
+       
         
-        usu[0].addDados("112", "112", "112", "112", "112", "112");
         
  
       
