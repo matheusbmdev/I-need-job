@@ -5,8 +5,13 @@
  */
 package Interfaces;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
@@ -21,13 +26,16 @@ public class Cadastrar extends javax.swing.JInternalFrame {
     /**
      * Creates new form Cadastrar
      */
-      
+      public void arq() throws IOException{
+            File Dados = new File("Dados.txt");
+              Dados.createNewFile();
+        }
       
         
     public Cadastrar() {
         
-
-
+        
+        
         initComponents();
         
          }
@@ -49,13 +57,15 @@ public class Cadastrar extends javax.swing.JInternalFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        CadCPF = new javax.swing.JTextField();
         CadEmail = new javax.swing.JTextField();
         CadSenha = new javax.swing.JPasswordField();
         CadDataNasc = new javax.swing.JFormattedTextField();
-        CadTel = new javax.swing.JTextField();
         CadastrarCad = new javax.swing.JButton();
+        CadTel = new javax.swing.JFormattedTextField();
+        CadCPF = new javax.swing.JFormattedTextField();
+        jLabel8 = new javax.swing.JLabel();
+        CadLogin = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
 
         setClosable(true);
         setTitle("Cadastro");
@@ -79,23 +89,20 @@ public class Cadastrar extends javax.swing.JInternalFrame {
 
         jLabel6.setText("Data de nascimento");
 
-        jLabel7.setText("Senha");
-
         CadSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CadSenhaActionPerformed(evt);
             }
         });
 
+        try {
+            CadDataNasc.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
         CadDataNasc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CadDataNascActionPerformed(evt);
-            }
-        });
-
-        CadTel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CadTelActionPerformed(evt);
             }
         });
 
@@ -106,32 +113,48 @@ public class Cadastrar extends javax.swing.JInternalFrame {
             }
         });
 
+        try {
+            CadTel.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        try {
+            CadCPF.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        jLabel8.setText("Login");
+
+        jLabel7.setText("Senha");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(CadastrarCad)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(CadLogin, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(CadCPF, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(CadTel)
                     .addComponent(CadSenha)
                     .addComponent(CadDataNasc)
-                    .addComponent(CadTel)
-                    .addComponent(CadCPF)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
                             .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7))
-                        .addGap(0, 99, Short.MAX_VALUE))
+                            .addComponent(jLabel6))
+                        .addGap(0, 96, Short.MAX_VALUE))
                     .addComponent(CadEmail)
                     .addComponent(CadNome))
                 .addGap(137, 137, 137))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(CadastrarCad)
-                .addGap(26, 26, 26))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -139,15 +162,21 @@ public class Cadastrar extends javax.swing.JInternalFrame {
                         .addComponent(jLabel4))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(136, 136, 136)
-                        .addComponent(jLabel1)))
-                .addContainerGap(150, Short.MAX_VALUE))
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel8))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel7)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(32, 32, 32)
+                .addGap(37, 37, 37)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CadNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -155,7 +184,7 @@ public class Cadastrar extends javax.swing.JInternalFrame {
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CadCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CadEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -168,29 +197,35 @@ public class Cadastrar extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CadDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(CadLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CadSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(CadastrarCad)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addGap(44, 44, 44))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(74, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 50, Short.MAX_VALUE))
         );
 
-        setBounds(0, 0, 505, 510);
+        setBounds(0, 0, 505, 543);
     }// </editor-fold>//GEN-END:initComponents
 
     private void CadDataNascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadDataNascActionPerformed
@@ -199,6 +234,42 @@ public class Cadastrar extends javax.swing.JInternalFrame {
 
     private void CadastrarCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarCadActionPerformed
                     // TODO add your handling code here: 
+       File Dados = new File("Dados.txt");
+         
+        try( FileWriter fw = new FileWriter(Dados, true) ){
+           
+               /*No windows usa \r\n e no linux apenas o \n*/
+                fw.write(this.CadNome.getText());
+                fw.write("\r\n");
+                fw.write(this.CadCPF.getText());
+                fw.write("\r\n");
+                fw.write(this.CadEmail.getText());
+                fw.write("\r\n");
+                fw.write(this.CadTel.getText());
+                fw.write("\r\n");
+                fw.write(this.CadDataNasc.getText());
+                fw.write("\r\n");
+                fw.write(this.CadLogin.getText());
+                fw.write("\r\n");
+                fw.write(this.CadSenha.getText());
+                fw.write("\r\n");
+                fw.write("\r\n");
+                fw.flush();
+                fw.close();
+               
+                    JOptionPane.showMessageDialog(null, "cadastro realizado com sucesso");
+              
+                
+                CadNome.setText("");
+                CadCPF.setText("");
+                CadEmail.setText("");
+                CadTel.setText("");
+                CadDataNasc.setText("");
+                CadLogin.setText("");
+                CadSenha.setText("");   
+                      }catch(IOException ex){
+                 ex.printStackTrace();
+                }
  
       
     }//GEN-LAST:event_CadastrarCadActionPerformed
@@ -208,22 +279,19 @@ public class Cadastrar extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_CadNomeActionPerformed
 
-    private void CadTelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadTelActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CadTelActionPerformed
-
     private void CadSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadSenhaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CadSenhaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField CadCPF;
+    private javax.swing.JFormattedTextField CadCPF;
     private javax.swing.JFormattedTextField CadDataNasc;
     private javax.swing.JTextField CadEmail;
+    private javax.swing.JTextField CadLogin;
     private javax.swing.JTextField CadNome;
     private javax.swing.JPasswordField CadSenha;
-    private javax.swing.JTextField CadTel;
+    private javax.swing.JFormattedTextField CadTel;
     private javax.swing.JButton CadastrarCad;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -232,6 +300,7 @@ public class Cadastrar extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

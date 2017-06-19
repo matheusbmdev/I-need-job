@@ -9,6 +9,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import static java.lang.System.in;
+import java.util.Scanner;
 /**
  *
  * @author Matheus
@@ -21,9 +23,9 @@ public class INeedJob {
     public static void main(String[] args) throws IOException {
        
         //==============DEFININDO ONDE FICARÁ O ARQUIVO!==================//
-        File Dados = new File("C:\\Users\\Matheus\\Documents\\NetBeansProjects", "Dados.txt");
+        File Dados = new File("Dados.txt");
         Dados.createNewFile();
-       
+       Scanner a = new Scanner(System.in);
         
        
         

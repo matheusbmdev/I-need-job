@@ -7,6 +7,12 @@ package Interfaces;
 
 import javax.swing.JFrame;
 import Interfaces.TelaPrincipal;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Matheus
@@ -16,7 +22,10 @@ public class Login extends javax.swing.JInternalFrame {
     /**
      * Creates new form Login
      */
-    
+     public void arq() throws IOException{
+            File Dados = new File("Dados.txt");
+        }
+     
     public Login() {
         
         initComponents();
@@ -164,9 +173,29 @@ public class Login extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_formMouseClicked
 
     private void ButtonEntrarLogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEntrarLogActionPerformed
-       
+        File Dados = new File("Dados.txt");
+        int k = 0;
+        try( FileReader fr = new FileReader(Dados) ){
+                BufferedReader br = new BufferedReader(fr);
+                        for(int i = 0; i < Dados.length();i++){
+                           String t = br.readLine();
+                            String T =  TextLogin.getText();
+                            if(t.equals(T)){
+                                    String comp = br.readLine();
+                                    String Comp =  LoginPassword.getText();
+                                    if(comp.equals(Comp)){
+                                        JOptionPane.showMessageDialog(null, "BEM VINDO ");
+                                    }
+                            }
+                        }
+                        
+                        
+                      }catch(IOException ex){
+                 ex.printStackTrace();
+                }
+ 
       
-        
+      
     }//GEN-LAST:event_ButtonEntrarLogActionPerformed
 
 

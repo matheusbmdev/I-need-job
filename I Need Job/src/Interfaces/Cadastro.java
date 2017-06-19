@@ -23,20 +23,10 @@ import java.io.PrintWriter;
 public class Cadastro {
    
 
-   public void cadastro() throws FileNotFoundException, IOException{
-    OutputStream arq = new FileOutputStream("Dados.txt");
-    OutputStreamWriter osw = new OutputStreamWriter(arq);
-    BufferedWriter bw = new BufferedWriter(osw);
-    PrintWriter out = new PrintWriter(bw);
+  
     
     
-    out.print("ok");
-    out.flush();
-    
-    bw.close();
-    
-    
-   }
+   
     
     
 }
