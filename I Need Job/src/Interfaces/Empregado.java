@@ -50,11 +50,5 @@ public class Empregado extends Usuario{
            System.out.println("Aqui!");
        }
        
-  public void addDados(String NomeCompleto) throws IOException{
-      
-      Cadastro cad = new Cadastro();
-      
-    
-      
-     }
+  
 }

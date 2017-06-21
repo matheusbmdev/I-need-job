@@ -78,28 +78,5 @@ public abstract class Usuario {
      
     
     
-     /*public void addDados(String NomeCompleto, String CPF, String Email, String Telefone,String DataNasc,String Senha) throws IOException{
-       File dados = new File("C:\\Users\\Matheus\\Documents\\NetBeansProjects", "Dados.txt");
-         
-       BufferedWriter writer = new BufferedWriter(new FileWriter(dados));
-       try{
-        FileWriter fw = new FileWriter(dados);
-        
-        System.out.println(" "+this.NomeCompleto);
-        fw.write(this.NomeCompleto);
-      
-        fw.write(this.CPF);
-      
-        fw.write(this.Email);
-      
-        fw.write(this.Telefone);
-       
-        fw.write(this.DataNasc);
-        
-        fw.write(this.Senha);
-       
-        fw.flush();
-        fw.close();
-       }catch(Exception e){}
-     }*/
+     
 }

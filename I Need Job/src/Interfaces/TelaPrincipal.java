@@ -181,7 +181,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
          Login TelaLog = new Login();
         jDesktopPane1.add(TelaLog);
-        
+        TelaLog.setLocation(jDesktopPane1.getSize().width/2 - TelaLog.getSize().width/2,jDesktopPane1.getSize().height/2 - TelaLog.getSize().height/2);
         TelaLog.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
    /* public void setTrue(){
@@ -195,7 +195,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         Cadastrar TelaCad = new Cadastrar();
         jDesktopPane1.add(TelaCad);
-
+        TelaCad.setLocation(jDesktopPane1.getSize().width/2 - TelaCad.getSize().width/2,jDesktopPane1.getSize().height/2 - TelaCad.getSize().height/2);
         TelaCad.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 

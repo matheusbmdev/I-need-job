@@ -20,16 +20,10 @@ public class INeedJob {
     /**
      * @param args the command line arguments
      */
+    public float Nota = 0;    
+    
     public static void main(String[] args) throws IOException {
-       
-        //==============DEFININDO ONDE FICARÁ O ARQUIVO!==================//
-        File Dados = new File("Dados.txt");
-        Dados.createNewFile();
-       Scanner a = new Scanner(System.in);
-        
-       
-        
-        
+           
  
       
     }
